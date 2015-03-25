@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tlist</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="wrap">
+		<%= render 'layouts/header' %>
+			<div id="content">
+				<%= yield %>
+			</div>
+		<%= render 'layouts/footer' %>
+	</div>
+</body>
+</html>

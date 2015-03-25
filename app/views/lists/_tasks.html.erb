@@ -1,0 +1,20 @@
+<strong><p>-------------------</p></strong>
+		
+<strong><h4>Task:</h4></strong>
+<strong><p><%= task.task %></p></strong>
+<p>Due Date:</p>
+<p><%= task.due_date %></p>
+
+<%= form_for([@list,task]) do |t| %>
+	<p>Completed?</p>
+	<%= t.check_box :completed %>
+	<%= t.submit "Save" %>
+<% end %>
+
+<p>----------</p>
+
+<%= link_to edit_list_task_path(@list,task), remote: true do %>
+	<button class="btn btn-default">Edit</button>
+<% end %>
+
+<%= link_to 'Delete', [@list,task], method: :delete, data: { confirm: 'Are you sure?' } %>

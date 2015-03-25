@@ -1,0 +1,13 @@
+<%= form_for([@list,@task]) do |t| %>
+	
+	<p>Task:</p>
+	<p><%= t.text_field :task %></p>
+	<p>Due Date:</p>
+	<p><%= t.text_field :due_date %></p>
+	<p>Completed</p>
+	<p><%= t.check_box :completed %></p>
+	<p><%= t.submit 'Save' %></p>
+	
+<% end %>
+
+

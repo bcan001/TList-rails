@@ -1,0 +1,84 @@
+<strong><h1><%= @list.name %></h1></strong>
+
+
+<%= flash[:notice] %>
+
+<h2>New Task for <%= @list.name %></h2>
+
+<%= link_to new_list_task_path(@list), remote: true do %>
+  <button class="btn btn-default">New</button>
+<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2" id="task-form" style="display:none;"></div>
+</div>
+
+<div class="row">
+  <div id="task-form-each" style="display:none;"></div>
+</div>
+
+
+
+<h2>CURRENT TASKS</h2>
+
+
+<% @list.tasks.each do |task| %>
+
+	<% if task.completed == false %>
+	
+		<strong><h1>-------------------------------------------</h1></strong>
+		<p>Task:</p>
+		<p><%= task.task %></p>
+		<p>Due Date:</p>
+		<p><%= task.due_date %></p>
+		<p>Completed:</p>
+		<p><%= form_for([@list,task]) do |t| %>
+					<%= t.check_box :completed %>
+					<%= t.submit "Save" %>
+				<% end %>
+		</p>
+
+		<p>------------------</p>
+
+		<p><%= link_to edit_list_task_path(@list,task), remote: true do %>
+					<button class="btn btn-default">Edit</button>
+				<% end %></p>
+		<p><%= link_to 'Delete', [@list,task], method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
+
+
+	<% end %>
+<% end %>
+
+
+<h2>COMPLETED TASKS</h2>
+<% @list.tasks.each do |task| %>
+	<% if task.completed == true %>
+
+		<strong><h1>-------------------------------------------</h1></strong>
+		<p>Task:</p>
+		<p><%= task.task %></p>
+		<p>Due Date:</p>
+		<p><%= task.due_date %></p>
+		<p>Completed:</p>
+		<p><%= form_for([@list,task]) do |t| %>
+					<%= t.check_box :completed %>
+					<%= t.submit "Save" %>
+				<% end %>
+		</p>
+
+		<p>------------------</p>
+
+		<p><%= link_to edit_list_task_path(@list,task), remote: true do %>
+					<button class="btn btn-default">Edit</button>
+				<% end %></p>
+		<p><%= link_to 'Delete', [@list,task], method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
+
+	<% end %>
+<% end %>
+
+
+
+
+
+
