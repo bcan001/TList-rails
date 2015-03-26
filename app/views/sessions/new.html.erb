@@ -1,16 +1,19 @@
-<h2>LOGIN</h2>
-<p><%= @error %></p>
-<%= form_for(:session, url: { action: 'create' }) do |f| %>
-	<p>Username:</p>
-	<p><%= f.text_field :username %></p>
-	<p>Email</p>
-	<p><%= f.text_field :email %></p>
-	<p>Password</p>
-	<p><%= f.password_field :password %></p>
-	<p>Password Confirmation</p>
-	<p><%= f.password_field :password_confirmation %></p>
-	<p><%= f.submit 'Login' %></p>
-<% end %>
+<div class="login">
+	<h2>LOGIN</h2>
+	<p><%= @error %></p>
+	<%= form_for(:session, url: { action: 'create' }) do |f| %>
+		<p>Username:</p>
+		<p><%= f.text_field :username %></p>
+		<p>Email</p>
+		<p><%= f.text_field :email %></p>
+		<p>Password</p>
+		<p><%= f.password_field :password %></p>
+		<p>Password Confirmation</p>
+		<p><%= f.password_field :password_confirmation %></p>
+		<p><%= f.submit 'Login' %></p>
+	<% end %>
 
-<p>Not a member?</p>
-<%= link_to 'Create an Account', new_user_path %>
+	<p>Not a member?</p>
+	<%= link_to 'Create an Account', new_user_path %>
+
+</div>

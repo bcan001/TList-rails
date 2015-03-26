@@ -1,12 +1,14 @@
-<%= form_for([@list, @list.tasks.build]) do |t| %>
+<div class="form">	
+	<%= form_for([@list, @list.tasks.build]) do |t| %>
 
-	<p>Task:</p>
-	<p><%= t.text_field :task %></p>
-	<p>Due Date:</p>
-	<p><%= t.text_field :due_date %></p>
-	<p><%= t.submit 'Save' %></p>
+		<strong><p>Task:</p></strong>
+		<p><%= t.text_field :task %></p>
+		<strong><p>Due Date:</p></strong>
+		<p><%= t.text_field :due_date %></p>
+		<p><%= t.submit 'Save' %></p>
 
-<% end %>
+	<% end %>
+<div>	
 
 
 
