@@ -37,6 +37,15 @@ class ListsController < ApplicationController
 		@list.destroy
 		redirect_to lists_path
 	end
+
+	def about
+
+	end
+
+	def home
+
+	end
+
 	private
 	def list_params
 		params.require(:list).permit(:name)

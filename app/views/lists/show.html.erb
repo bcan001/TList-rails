@@ -33,10 +33,11 @@
 			<strong><p>Due Date:</p></strong>
 			<p><%= task.due_date %></p>
 			<strong><p>Completed:</p></strong>
-			<p><%= form_for([@list,task]) do |t| %>
-						<%= t.check_box :completed %>
-						<%= t.submit "Save" %>
-					<% end %>
+			<p>
+				<%= form_for([@list,task]) do |t| %>
+					<%= t.check_box :completed %>
+					<%= t.submit "Save" %>
+				<% end %>
 			</p>
 
 			<p>------------------</p>

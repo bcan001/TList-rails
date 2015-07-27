@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
+  root 'lists#home'
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'log_out'
   delete '/logout', to: 'sessions#destroy'
+
+  get '/about', to: 'lists#about', as: 'about'
+  get '/', to: 'lists#home', as: 'home'
+
 
 
   resources :users

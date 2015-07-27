@@ -1,13 +1,21 @@
-<h1 id="brand">TaskLIST</h1>
+<h1 id="brand"><%= link_to 'TaskLIST', root_path, class: 'text-color:white;' %></h1>
 
 <% if current_user %>
 	<ul id="nav">
 		<li><%= link_to "Logout", log_out_path %></li>
 		<li><%= link_to "New List", new_list_path %></li>
 		<li><%= link_to "My Lists", lists_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Home", home_path %></li>
+
+
 	</ul>
 <% else %>
 	<ul id="nav">
 		<li><%= link_to "Login", login_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Home", home_path %></li>
+		
+
 	</ul>
 <% end %>
